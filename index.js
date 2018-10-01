@@ -1,10 +1,10 @@
-var browserfsPath = require.resolve('browserfs');
+/*var browserfsPath = require('./browserfs');
 var browserifyConfig = {
     // Override Browserify's builtins for buffer/fs/path.
     builtins: Object.assign({}, require('browserify/lib/builtins'), {
-        "buffer": require.resolve('browserfs/dist/shims/buffer.js'),
-        "fs": require.resolve("browserfs/dist/shims/fs.js"),
-        "path": require.resolve("browserfs/dist/shims/path.js")
+        "buffer": require('./shims/buffer.js'),
+        "fs": require("./shims/fs.js"),
+        "path": require("./shims/path.js")
     }),
     insertGlobalVars: {
         // process, Buffer, and BrowserFS globals.
@@ -14,6 +14,6 @@ var browserifyConfig = {
         'Buffer': function () { return "require('buffer').Buffer" },
         "BrowserFS": function() { return "require('" + browserfsPath + "')" }
     }
-};
+};*/
 
-module.exports = insertGlobalVars.BrowserFS;
+module.exports = require('./browserfs');
